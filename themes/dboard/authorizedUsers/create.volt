@@ -1,0 +1,100 @@
+
+
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-shipping-fast icon-gradient bg-mean-fruit">
+                </i>
+            </div>
+            <div>Add Authorized User
+                <div class="page-title-subheading"> 
+                </div>
+            </div>
+        </div>
+        <div class="page-title-actions">
+            <div class="d-inline-block ">  
+                {{ link_to("authorizedUsers", 'class': 'btn-shadow btn btn-alternate', '<span class="btn-icon-wrapper pr-2 opacity-7"><i class="fas fa-arrow-left fa-w-20"></i></span> Go Back') }}
+            </div>
+        </div>    
+    </div>
+</div>    
+ 
+
+
+
+
+<div class="row"> 
+    <div class="col-lg-12">
+
+        <div class="main-card mb-3 card">
+
+            <div class="card-body"><h5 class="card-title mb-5">Enter Authorized User's Details Below</h5>
+  
+                {{ flash.output() }}
+                
+                <form role="form" method="post" action="{{ url("authorizedUsers/create") }}">
+                    <!-- input type="hidden" name="orgid" value="3" -->
+                    <div class="box-body "> 
+                        <div class="container">
+                        <div class="row">      
+        
+                        <!-- text input --> 
+
+                        <div class="col-md-6 col-sm-12"> 
+                            <div class="form-group">
+                                <label for="firstname" class="sr-only">First Name</label> 
+                                 {{ form.render('firstname') }}
+                            </div> 
+                        </div> 
+                        <div class="col-md-6 col-sm-12"> 
+                            <div class="form-group">
+                                <label for="lastname" class="sr-only">Last Name</label> 
+                                 {{ form.render('lastname') }}
+                            </div> 
+                        </div> 
+                        <div class="col-md-6 col-sm-12"> 
+                            <div class="form-group">
+                                <label for="email" class="sr-only">Email Address</label> 
+                                 {{ form.render('email') }}
+                            </div> 
+                        </div>  
+                        <div class="col-md-6 col-sm-12"> 
+                            <div class="form-group">
+                                <label for="password" class="sr-only">Password</label> 
+                                 {{ form.render('password') }}
+                            </div> 
+                        </div>
+                        <div class="col-md-6 col-sm-12"> 
+                            <div class="form-group">
+                                <label for="orgid" class="sr-only">Businesses</label> 
+                                 {{ form.render('orgid') }} 
+                            </div> 
+                        </div>
+                        <div class="col-md-6 col-sm-12"> 
+                            <div class="form-group">
+                                <label for="profilesId" class="sr-only">Role</label>
+                                 {{ form.render('profilesId') }} 
+                            </div> 
+                        </div> 
+                         
+                        </div></div>                
+                        <!-- /.row-container -->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="modal-footer">    
+                        {{ tag_html('button', ['id': 'saveNewUser', 'type': 'submit', 'class': 'btn-shadow btn btn-primary btn-lg ml-3'], false, true, true) }}
+                            <span class="btn-icon-wrapper pr-2 opacity-7"><i class="fas fa-save fa-w-20"></i></span>  Create New User
+                        {{ tag_html_close('button') }} 
+                    </div>
+        
+                </form>  
+                
+                
+
+                
+            </div>
+        </div>
+
+    </div> 
+</div>
